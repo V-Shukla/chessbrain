@@ -45,16 +45,69 @@ public class ChessBrain
 			position[1] = p[1];
 		}
 		
+// 		this will get the appropriate color of cell. 		
+//		cellAdd = row+column;
+//		
+//		if ( (cellAdd mod 2) == 0)
+//
+//		{
+//		    isEven = true
+//		}
+//
+//		else
+//
+//		{
+//		    isEven = false
+//		}
+		
 	}
 	
 	public class Pawn extends Piece
 	{
 		//rules for Pawn2
-		//moves one space forward
-		//attacks diagonially
-		//can move 2 spaces on first move
-		//can attack en passant
-		//when it makes it to the opposite side of the board it may be exchanged for another piece
+		//select of an appropriate color for the current
+		//pawn position is known by selection of the pawn
+		int[][] currentPosition = cell[row][column];
+
+//		pawn can be white or black, pawn color is obtained from brain class
+
+//		Pawn can only move one step forward
+//		except for the first time move, where it can choose to move two steps
+		
+		int i=1; //keep track of number of cells to be highlighted
+		int[][] highlight; 
+		int[][] highlightCell = 0;//keeps track of number of cells to be highlighted
+		
+			//if the color is white and row is 2, pawn is at initial position
+			if (moveColor==true || row == 2) {	
+				highlight[i][i] = cell[row+1][column]; 
+				i++;
+				highlight[i][i] = cell[row+2][column];
+				i++;
+	
+			}
+			//if the color is black and row is 7, pawn is at initial position
+			else if (moveColor==false || row == 7){ 
+				highlight[i][i] = cell[row+1][column];
+				i++;
+				highlight[i][i] = cell[row+2][column];
+				i++;
+				
+			}
+			
+			//if pawn is not at initial position can not move more then one step
+			else{
+				highlight[i][i] = cell[row+1][column]; 
+				i++;
+			}
+			
+
+//		pawn can only capture one step cross to its cell except for 
+//		option to create any other piece when pawn reaches next side
+//		pawn can not move backwards
+//			en passant Pawn capture when passing
+		
+
 	}
 	
 	public class Rook extends Piece
