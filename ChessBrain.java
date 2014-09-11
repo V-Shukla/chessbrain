@@ -5,7 +5,34 @@ public class ChessBrain
 
 	public static void main(String[] args) 
 	{
-
+		//piecesClass properties
+				//pieces move
+				//possible moves of the selected piece should be highlighted
+					//future cell can not be occupied with the same color piece
+					//after the move, if the kind of opposite color is attached, send the check message
+				//pieces capture or get captured
+					// no piece can capture another piece of the same color
+					// two pieces can not share one cell
+					// residing piece is considered captured when other piece moves in to it space
+					//when piece is captured it moves out of the board
+					// no pieces can occupy a space outside of the board unless captured
+				//pieces can not jump other pieces to move in to an existing space regardless of the color, except for the knight
+				//pieces can occupy any colored cell except for bishops
+				//pieces have to be inside a cell, can not occupy a space in between the cells
+				//for pawn, king and rook first move needs to set a flag
+				
+				//!!!!!!!!!!!!!!!!!!!!!idea!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				// rooks movement is same as extended pawn horizontal and vertical
+				// bishop's movement is same as pawn capturing piece from cross cell
+				// knights movement is equivalent to one pawn move and pawn capture with or without capture
+				//queen moves as a combination of rook and bishop
+				// king moves same as queen but is limited to only one adjacent step
+				
+				//!!!!!!!!!!!!!!!!!!!!!observation!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				//only 3 types of capture exist
+				// 1. pawn capturing in cross cell
+				// 2. different colored pieces blocking movement of current piece being captured
+				// 3. passing pawn capture
 	}
 	
 	public abstract class Piece
