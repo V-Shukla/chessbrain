@@ -49,7 +49,7 @@ public class ChessBrain
 	
 	public class Pawn extends Piece
 	{
-		//rules for Pawn
+		//rules for Pawn2
 		//moves one space forward
 		//attacks diagonially
 		//can move 2 spaces on first move
